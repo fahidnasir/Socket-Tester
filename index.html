@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Socket.io Tester</title>
+  <style>
+    section>div {
+      display: grid;
+    }
+
+    section>div>label {
+      font-size: 1.25em;
+    }
+
+    section>div>input {
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    section>div>button {
+      padding: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="serversettings">
+    <div>
+      <label for="ip">IP</label>
+      <input type="text" placeholder="Server IP" value="localhost" name="ip" id="ip">
+    </div>
+    <div>
+      <label for="port">Port</label>
+      <input type="number" placeholder="Server Port" value="3000" name="port" id="port">
+    </div>
+    <div>
+      <label for="path">Path</label>
+      <input type="text" placeholder="Server socket path" name="path" id="path">
+    </div>
+    <div>
+      <label for="query">Query</label>
+      <input type="text" placeholder="Server socket connection query" name="query" id="query">
+      <button id="btnConnect">Connect</button>
+    </div>
+  </section>
+  <section id="eventsettings">
+    <div>
+      <label for="eventName">Event Name</label>
+      <input type="text" name="eventName" id="eventName">
+    </div>
+    <div>
+      <label for="eventBody">Event Body (JSON)</label>
+      <textarea name="eventBody" id="eventBody"></textarea>
+      <button id="btnSend">Send Event</button>
+    </div>
+    </div>
+  </section>
+  <script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+    var io = require('socket.io-client')
+  </script>
+  <script src="index.js"></script>
+</body>
+
+</html>
